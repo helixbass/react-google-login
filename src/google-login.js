@@ -39,26 +39,28 @@ const GoogleLogin = props => {
     googleLogin
   } = props
 
-  const { signIn, loaded } = googleLogin || useGoogleLogin({
-    onSuccess,
-    clientId,
-    cookiePolicy,
-    loginHint,
-    hostedDomain,
-    autoLoad,
-    isSignedIn,
-    fetchBasicProfile,
-    redirectUri,
-    discoveryDocs,
-    onFailure,
-    uxMode,
-    scope,
-    accessType,
-    responseType,
-    jsSrc,
-    onRequest,
-    prompt
-  })
+  const { signIn, loaded } =
+    googleLogin ||
+    useGoogleLogin({
+      onSuccess,
+      clientId,
+      cookiePolicy,
+      loginHint,
+      hostedDomain,
+      autoLoad,
+      isSignedIn,
+      fetchBasicProfile,
+      redirectUri,
+      discoveryDocs,
+      onFailure,
+      uxMode,
+      scope,
+      accessType,
+      responseType,
+      jsSrc,
+      onRequest,
+      prompt
+    })
   const disabled = disabledProp || !loaded
 
   if (render) {
@@ -138,9 +140,9 @@ const GoogleLogin = props => {
 }
 
 GoogleLogin.propTypes = {
-  onSuccess: PropTypes.func.isRequired,
-  onFailure: PropTypes.func.isRequired,
-  clientId: PropTypes.string.isRequired,
+  onSuccess: PropTypes.func,
+  onFailure: PropTypes.func,
+  clientId: PropTypes.string,
   jsSrc: PropTypes.string,
   onRequest: PropTypes.func,
   buttonText: PropTypes.node,
