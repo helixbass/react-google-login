@@ -35,10 +35,11 @@ const GoogleLogin = props => {
     responseType,
     jsSrc,
     onRequest,
-    prompt
+    prompt,
+    googleLogin
   } = props
 
-  const { signIn, loaded } = useGoogleLogin({
+  const { signIn, loaded } = googleLogin || useGoogleLogin({
     onSuccess,
     clientId,
     cookiePolicy,
